@@ -1,0 +1,66 @@
+@import url('https://fonts.googleapis.com/css?family=Cabin:400,700');
+@import url('https://fonts.googleapis.com/css?family=Libre+Baskerville:700');
+@import url('https://fonts.googleapis.com/css?family=Cinzel+Decorative:700');
+@import url('https://fonts.googleapis.com/css?family=Philosopher:700i');
+
+* {
+	margin: 0;
+	padding: 0;
+	box-sizing: border-box;
+}
+
+body {
+	font-family: 'Cabin', 'Arial', sans-serif;
+	background-color: #FFF3B4;
+	font-size: 18px;
+}
+
+header {
+	background-color: rgba(255,255,255,0.9);
+    padding: 1.25%;
+}
+
+h1 {
+	font-family: 'Cinzel Decorative', 'Baskerville', serif;
+	font-size: 4em;
+	font-weight: 700;
+	text-align: left;
+	padding: 0.9%;
+	color: #153B1B;
+	float: left;
+	text-shadow: .04em .04em .04em rgba(255,168,82,0.6);
+}
+
+h2 {
+	font-family: 'Philosopher', 'Arial', sans-serif;
+	font-size: 1.5em;
+	font-weight: 400;
+	font-style: italic;
+	text-align: left;
+	color: rgba(43,30,20,1);
+	margin-left: 1%;
+	padding: 0.3%;
+	float: left;
+}
+
+.clearfix:after {
+    visibility: hidden;
+    display: block;
+    font-size: 0;
+    content: " ";
+    clear: both;
+    height: 0;
+}
+
+#headerhr {
+	border: none;
+	height: .2em;
+	background-color: rgba(43,30,20,0.9);
+	width: auto;
+}
+
+#piney_point_one {
+	width: 23%;
+	display: block;
+	float: left;
+}
