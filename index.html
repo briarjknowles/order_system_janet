@@ -6,43 +6,85 @@
 	<link rel="stylesheet" type="text/css" href="css/style.css">
 </head>
 <body>
-	<header>
-		<header class="clearfix">
+	<header class="clearfix">
 		<h1>Fine Art by Janet Knowles</h1>
 		<h2>Capturing Ontario and the Ottawa Valley</h2>
 	</header>
-	<hr id="headerhr">
-	</header>
-		<img id="piney_point_one" src="images/piney_point_one.jpg">
-		<h2>Piney Point</h2>
-		<h4>laser print: 6" x 9"</h4>
-		<h3>$8.00</h3>
-		<p>oil on canvas
-		<br>
-		1972
-		<br>
-		Deep River, ON</p>
-		<form class="order">
-			<select id="quantity" name="printquantity" required>
-				<option value="1" selected>
-					1
-				</option>
-				<option value="2">
-					2
-				</option>
-				<option value="3">
-					3
-				</option>
-				<option value="4">
-					4
-				</option>
-				<option value="5">
-					5	
-				</option>
-			</select>
-			<input type="submit" value="Buy">
-		</form>
+	<hr id="headerhr" class="clearfix">
+	<nav>
+		<li><a href="#">Gallery</a></li>
+		<li><a href="#">About</a></li>
+		<li><a href="#">Commissions</a></li>
+		<li><a href="#">Shop</a></li>
+		<li><a href="#">Workshops</a></li>
+		<li><a href="#">Upcoming</a></li>
+	</nav>
+	<main class="clearfix">
+		<img id="piney_point_one" src="images/piney_point_one.jpg" class="clearfix">
+		<div class="itemInfo" class="clearfix">
+			<h2 id="paintingTitle">Piney Point</h2>
+			<h4 id="itemType">laser print: 6" x 9"</h4>
+			<h3 id="price">$8.00</h3>
+			<p id="itemSpec">oil on canvas
+			<br>
+			1972
+			<br>
+			Deep River, ON</p>
+			<form class="order" class="clearfix">
+				<select id="quantity" name="printquantity" required>
+					<option value="1" selected>
+						1
+					</option>
+					<option value="2">
+						2
+					</option>
+					<option value="3">
+						3
+					</option>
+					<option value="4">
+						4
+					</option>
+					<option value="5">
+						5	
+					</option>
+				</select>
+				<input type="submit" value="Buy">
+			</form>
+			<aside>
+
+				<p id="itemDescription"> Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod
+				tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam,
+				quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo
+				consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse
+				cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non
+				proident, sunt in culpa qui officia deserunt mollit anim id est laborum.</p>
+
+			</aside>
+		</div>
+
+		<input type="button" value="Reviews" id="reviewToggle">
+
+		</main>
+
+		<div id="reviewSection">
+
+			<div id="reviews"></div>
+
+			<form id="newReview">
+
+				<input type="text" value="Username" required>
+				<input type="text" value="Comment" maxlength="200" required>
+				<input type="submit" value="Submit">
+			
+			</form>
+		</div>
+	<footer class="clearfix">
+		<a id="backtotop" href="#"> Back to the top </a>
+		<p id="copyright"> Copyright Janet Knowles 2017 </p> 
+	</footer>
+
 	<script src="js/jquery-3.2.1.min.js"></script>
 	<script src="js/main.js"></script>
+
 </body>
 </html>
