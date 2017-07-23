@@ -69,13 +69,14 @@
 
 		<div class="reviewSection">
 
-			<div id="reviews"></div>
+		<!--empty unordered list-->
+			<ul id="reviews" class="clearfix"></ul>
 
 			<form id="newReview">
 
 				<input id="userName" type="text" placeholder="Username" required>
 				<input id="comment" type="text" placeholder="Leave a comment" maxlength="200" required>
-				<input d="submitReview" type="submit" value="Submit">
+				<input id="submitReview" type="submit" value="Submit">
 			
 			</form>
 
@@ -88,12 +89,17 @@
 
 	<!--Handlebars template for cart order-->
 	<script id="comment-template" type="text/x-handlebars-template">
-
-		
+		<li>
+			<p id="nameStyle">{{name}}</p>
+			<p id="commentStyle">{{comment}}</p>
+		</li>
 	</script>
 
 	<!--Firebase CDN-->
 	<script src="https://www.gstatic.com/firebasejs/4.1.3/firebase.js"></script>
+
+	<!--Handlbars link-->
+	<script src="js/handlebars-v4.0.5.js"></script>
 
 	<!--jQuery link-->
 	<script src="js/jquery-3.2.1.min.js"></script>

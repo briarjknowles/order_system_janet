@@ -13,9 +13,11 @@
 
 var database = firebase.database();
 
+// cart array, not sure if it's neccessary since I have firebase but... 
+
 var cart = [];
 
-var reviews = [];
+// get rid of all event default actions
 
 $('li').on('click', function(e) {
 	e.preventDefault();
@@ -24,6 +26,8 @@ $('li').on('click', function(e) {
 $('a').on('click', function(e) {
 	e.preventDefault();
 });
+
+// collect info from user form with event listener
 
 $('#addToCart').on('click', function(e) {
 	e.preventDefault();
@@ -40,7 +44,7 @@ $('#addToCart').on('click', function(e) {
 
 	// create section for orders in db
 
-	var orderData = database.ref('orders')
+	var orderData = database.ref('orders');
 
 	// add order info to database
 
@@ -54,6 +58,8 @@ $('#addToCart').on('click', function(e) {
 
 });
 
+//Toggle Review section
+
 $('#reviewToggle').on('click', function(e) {
 	e.preventDefault();
 
@@ -61,15 +67,75 @@ $('#reviewToggle').on('click', function(e) {
 
 });
 
+// comment values save to firebase
+
 $('#submitReview').on('click', function(e) {
 	e.preventDefault();
 
-	// create section for orders in db
+	var userName = $('#userName').val();
 
-	var userName =
+	$('#userName').val('');
 
-	var userComment = 
+	var userComment = $('#comment').val();
 
-	var commentData = database.ref('comments');
+	$('#comment').val('');
 
+	// create db section for comments
+
+	var commentReference = database.ref('comments');
+
+	//add comment to db
+
+	commentReference.push({
+		name: userName,
+		comment: userComment
+	});
 });
+
+//get comments when page loads
+
+function getComments() {
+
+	//listening for value changes in database
+
+	database.ref('comments').on('value', function(results) {
+
+		var allComments = results.val();
+
+		var reviews = [];
+
+		for (var item in allComments) {
+
+			var context = {
+
+				// not sure if I'm using the appropriate values here... taking it from the database value names atm, which makes sense
+
+				name: allComments[item].name,
+				comment: allComments[item].comment,
+				commentId: item
+			};
+
+			var source = $('#comment-template').html();
+
+			var template = Handlebars.compile(source);
+
+			var commentListElement = template(context);
+
+			reviews.push(commentListElement);
+
+		}
+
+		//not sure what's happening here - M?
+
+		$('#reviews').empty();
+
+		for (var i in reviews) {
+
+			$('#reviews').append(reviews[i])
+			
+		}
+
+	});
+}
+
+getComments();
