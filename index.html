@@ -63,29 +63,42 @@
 			</aside>
 		</div>
 
-		<input type="button" value="Reviews" id="reviewToggle">
+		<button id="reviewToggle">Reviews</button>
 
 		</main>
 
-		<div id="reviewSection">
+		<div class="reviewSection">
 
 			<div id="reviews"></div>
 
 			<form id="newReview">
 
-				<input type="text" value="Username" required>
-				<input type="text" value="Comment" maxlength="200" required>
-				<input type="submit" value="Submit" id="submitReview">
+				<input id="userName" type="text" placeholder="Username" required>
+				<input id="comment" type="text" placeholder="Leave a comment" maxlength="200" required>
+				<input d="submitReview" type="submit" value="Submit">
 			
 			</form>
+
 		</div>
+
 	<footer class="clearfix">
 		<a id="backtotop" href="#"> Back to the top </a>
 		<p id="copyright"> Copyright Janet Knowles 2017 </p> 
 	</footer>
 
+	<!--Handlebars template for cart order-->
+	<script id="comment-template" type="text/x-handlebars-template">
+
+		
+	</script>
+
+	<!--Firebase CDN-->
 	<script src="https://www.gstatic.com/firebasejs/4.1.3/firebase.js"></script>
+
+	<!--jQuery link-->
 	<script src="js/jquery-3.2.1.min.js"></script>
+
+	<!--Main JS file-->
 	<script src="js/main.js"></script>
 
 </body>

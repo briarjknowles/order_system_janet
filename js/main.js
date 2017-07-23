@@ -8,8 +8,12 @@
     storageBucket: "",
     messagingSenderId: "429456216456"
   };
-  
+
   firebase.initializeApp(config);
+
+var database = firebase.database();
+
+var cart = [];
 
 var reviews = [];
 
@@ -34,14 +38,38 @@ $('#addToCart').on('click', function(e) {
 
 	var orderPrice = itemPrice * quantity;
 
-	console.log(orderPrice);
+	// create section for orders in db
+
+	var orderData = database.ref('orders')
+
+	// add order info to database
+
+	orderData.push({
+
+	numberOfItem: quantity,
+	priceOfItem: itemPrice,
+	total: orderPrice
+
+	});
 
 });
 
 $('#reviewToggle').on('click', function(e) {
 	e.preventDefault();
-})
+
+	$('.reviewSection').toggle();
+
+});
 
 $('#submitReview').on('click', function(e) {
 	e.preventDefault();
+
+	// create section for orders in db
+
+	var userName =
+
+	var userComment = 
+
+	var commentData = database.ref('comments');
+
 });

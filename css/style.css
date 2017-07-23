@@ -119,6 +119,10 @@ a {
 	float: left;
 }
 
+.reviewSection {
+	display:none;
+}
+
 #paintingTitle {
 	float: left;
 	width: 100%;
